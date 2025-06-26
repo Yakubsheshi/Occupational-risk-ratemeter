@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEBOSH Risk Matrix App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Select Occupation</h3>
+      <select id="occupation" onchange="updateOccupation()">
+        <option value="Office">Office</option>
+        <option value="Home">Home</option>
+        <option value="Industrial Site">Industrial Site</option>
+        <option value="Construction">Construction</option>
+        <option value="Laboratory">Laboratory</option>
+      </select>
+    </aside>
+
+    <main class="main-content">
+      <h2>NEBOSH 5×5 Risk Matrix</h2>
+
+      <div class="selectors">
+        <label>Likelihood:
+          <select id="likelihood" onchange="calculateRisk()">
+            <option value="1">1 - Rare</option>
+            <option value="2">2 - Unlikely</option>
+            <option value="3">3 - Possible</option>
+            <option value="4">4 - Likely</option>
+            <option value="5">5 - Certain</option>
+          </select>
+        </label>
+
+        <label>Severity:
+          <select id="severity" onchange="calculateRisk()">
+            <option value="1">1 - Insignificant</option>
+            <option value="2">2 - Minor</option>
+            <option value="3">3 - Moderate</option>
+            <option value="4">4 - Major</option>
+            <option value="5">5 - Catastrophic</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="result-box">
+        <p><strong>Selected Occupation:</strong> <span id="selectedOccupation">Office</span></p>
+        <p><strong>Risk Rating:</strong> <span id="riskRating">-</span></p>
+        <div class="lamp" id="riskLamp"></div>
+        <p><strong>Risk Level:</strong> <span id="riskRemark">-</span></p>
+        <p id="riskDetail">Select values to calculate detailed risk.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
